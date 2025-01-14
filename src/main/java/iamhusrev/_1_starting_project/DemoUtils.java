@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DemoUtils {
 
-    private final String academy = "Luv2Code Academy";
+    private final String academy = "iamhusrev Academy";
     private final String academyDuplicate = academy;
     private final String[] firstThreeLettersOfAlphabet = {"A", "B", "C"};
     private final List<String> academyInList = List.of("luv", "2", "code");
