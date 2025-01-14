@@ -9,8 +9,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+
+//@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
+//@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+//@DisplayNameGeneration(DisplayNameGenerator.Standard.class)
+//@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
 class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -18,6 +24,7 @@ class DemoUtilsTest {
     @BeforeAll
     static void setUpBeforeClass() throws Exception {
         System.out.println("Running @BeforeAll");
+        System.out.println();
     }
 
     @AfterAll
@@ -38,26 +45,22 @@ class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Equals and Not Equals")
     void testEqualsAndNotEquals() {
-
         System.out.println("Running test: testEqualsAndNotEquals");
-
         DemoUtils demoUtils = new DemoUtils();
-
         assertEquals(6, demoUtils.add(2, 4), "2+4 must be 6");
         Assertions.assertNotEquals(6, demoUtils.add(1, 9), "1+9 must not be 6");
     }
 
 
     @Test
+    @DisplayName("Null and Not Null")
     void testNullAndNotNull() {
-
         System.out.println("Running test: testNullAndNotNull");
         DemoUtils demoUtils = new DemoUtils();
-
         String str1 = null;
         String str2 = "iamhusrev";
-
         assertNull(demoUtils.checkNull(str1), "Object should be null");
         assertNotNull(demoUtils.checkNull(str2), "Object should not be null");
     }
