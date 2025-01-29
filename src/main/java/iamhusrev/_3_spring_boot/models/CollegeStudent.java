@@ -1,4 +1,4 @@
-package iamhusrev._3_spring_boot.component.models;
+package iamhusrev._3_spring_boot.models;
 
 public class CollegeStudent implements Student {
     private String firstname;

@@ -1,7 +1,7 @@
-package iamhusrev._3_spring_boot.component;
+package iamhusrev._3_spring_boot;
 
 
-import iamhusrev._3_spring_boot.component.models.CollegeStudent;
+import iamhusrev._3_spring_boot.models.CollegeStudent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
