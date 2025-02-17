@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/1-starting-project/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1-starting-project/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1-starting-project2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1231231/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1231231/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1533/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1533/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2-tdd/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/2-tdd/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/3-spring-boot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/3-spring-boot/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/4-grade-book-integration-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/4-grade-book-integration-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/4-gradebook-app-integration-test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/starting-project-2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/starting-project/src/main/java" charset="UTF-8" />
   </component>
 </project>
