@@ -1,8 +1,14 @@
 package com.iamhusrev.springmvc.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class GradeBookCollegeStudent extends CollegeStudent {
 
     private int id;
+
 
     private StudentGrades studentGrades;
 
@@ -14,14 +20,6 @@ public class GradeBookCollegeStudent extends CollegeStudent {
         super(firstname, lastname, emailAddress);
         this.studentGrades = studentGrades;
         this.id = id;
-    }
-
-    public StudentGrades getStudentGrades() {
-        return studentGrades;
-    }
-
-    public void setStudentGrades(StudentGrades studentGrades) {
-        this.studentGrades = studentGrades;
     }
 
     @Override
