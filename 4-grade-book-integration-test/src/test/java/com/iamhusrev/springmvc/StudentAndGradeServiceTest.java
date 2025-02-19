@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 
 @TestPropertySource("/application.properties")
 @SpringBootTest
@@ -73,6 +74,7 @@ public class StudentAndGradeServiceTest {
     }
 
     @Test
+    @Sql("/insertData.sql")
     public void getGradeBookService() {
         Iterable<CollegeStudent> collegeStudentIterable = studentService.getGradeBook();
 
@@ -82,7 +84,7 @@ public class StudentAndGradeServiceTest {
             studentList.add(student);
         }
 
-        assertEquals(1, studentList.size());
+        assertEquals(5, studentList.size());
 
     }
 
