@@ -16,6 +16,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.TestPropertySource;
@@ -50,14 +51,38 @@ public class StudentAndGradeServiceTest {
     @Autowired
     private HistoryGradeDao historyGradeDao;
 
+    @Value("${sql.script.create.student}")
+    private String sqlAddStudent;
+
+    @Value("${sql.script.create.math.grade}")
+    private String sqlAddMathGrade;
+
+    @Value("${sql.script.create.science.grade}")
+    private String sqlAddScienceGrade;
+
+    @Value("${sql.script.create.history.grade}")
+    private String sqlAddHistoryGrade;
+
+    @Value("${sql.script.delete.student}")
+    private String sqlDeleteStudent;
+
+    @Value("${sql.script.delete.math.grade}")
+    private String sqlDeleteMathGrade;
+
+    @Value("${sql.script.delete.science.grade}")
+    private String sqlDeleteScienceGrade;
+
+    @Value("${sql.script.delete.history.grade}")
+    private String sqlDeleteHistoryGrade;
+
     @BeforeEach
     public void setupDatabase() {
-        jdbcTemplate.execute("insert into student(firstname, lastname, email_address) " +
-            "values ('Husrev', 'Ozcan', 'iamhusrev@iamhusrev.com')");
 
-        jdbcTemplate.execute("insert into math_grade(grade, student_id) values (80.50, 1)");
-        jdbcTemplate.execute("insert into science_grade(grade, student_id) values (80.50, 1)");
-        jdbcTemplate.execute("insert into history_grade(grade, student_id) values (80.50, 1)");
+        jdbcTemplate.execute(sqlAddStudent);
+        jdbcTemplate.execute(sqlAddMathGrade);
+        jdbcTemplate.execute(sqlAddScienceGrade);
+        jdbcTemplate.execute(sqlAddHistoryGrade);
+
     }
 
     @Test
@@ -182,24 +207,17 @@ public class StudentAndGradeServiceTest {
 
 
     @Test
-    public void  studentInformationReturnNull() {
+    public void studentInformationReturnNull() {
         GradeBookCollegeStudent gradebookCollegeStudent = studentService.studentInformation(0);
         assertNull(gradebookCollegeStudent);
     }
 
     @AfterEach
     public void setupAfterTransaction() {
-        jdbcTemplate.execute("delete from student");
-
-        jdbcTemplate.execute("delete from math_grade");
-        jdbcTemplate.execute("delete from science_grade");
-        jdbcTemplate.execute("delete from history_grade");
-
-        jdbcTemplate.execute("alter table student ALTER COLUMN ID RESTART WITH 1");
-
-        jdbcTemplate.execute("alter table math_grade ALTER COLUMN ID RESTART WITH 1");
-        jdbcTemplate.execute("alter table science_grade ALTER COLUMN ID RESTART WITH 1");
-        jdbcTemplate.execute("alter table history_grade ALTER COLUMN ID RESTART WITH 1");
-
+        jdbcTemplate.execute(sqlDeleteStudent);
+        jdbcTemplate.execute(sqlDeleteMathGrade);
+        jdbcTemplate.execute(sqlDeleteScienceGrade);
+        jdbcTemplate.execute(sqlDeleteHistoryGrade);
     }
+
 }
